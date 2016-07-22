@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/nats-io/nats"
 	"fmt"
-	"nextevolution/common_types/controller_collector"
+	colltypes "nextevolution/collector/types"
 	"encoding/json"
 	"time"
 )
@@ -14,7 +14,7 @@ func main() {
 		panic(fmt.Sprintf("Cannot connect to NATS: %s", err))
 	}
 
-	request := controller_collector.Request{
+	request := colltypes.Request{
 		FbToken: "some token",
 		UserId: "1234",
 		Groups: []string{"1601038443544679"},
